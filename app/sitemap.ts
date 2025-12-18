@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { getAllProductSlugs } from "@/lib/sanity-utils"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.vercel.app"
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vitaminaz.vercel.app"
 
   // Get all product slugs from Sanity
   const productSlugs = await getAllProductSlugs()
