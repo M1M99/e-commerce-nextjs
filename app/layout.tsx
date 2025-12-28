@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Baku Shop" }],
   icons: {
-    icon: "https://www.freeiconspng.com/uploads/vitamin-icon-1.png",          
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico"
+    icon: "/favicon.ico?v=2",          
+    shortcut: "favicon-v2.ico",
+    apple: "favicon-v2.ico"
   },
   openGraph: {
     type: "website",
