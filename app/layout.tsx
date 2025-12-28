@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     "WhatsApp shopping Azerbaijan",
   ],
   authors: [{ name: "Baku Shop" }],
+  icons: {
+    icon: "/favicon.ico",          
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico"
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
