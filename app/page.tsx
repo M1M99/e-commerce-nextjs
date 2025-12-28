@@ -51,7 +51,7 @@ export default async function HomePage() {
 
       {/* Hero Section */}
       <section className="bg-muted/50 border-b">
-        <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="container mx-auto px-4 py-12 md:py-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Quality Products Delivered in Baku</h2>
           <p className="text-xl text-muted-foreground max-w-2xl text-pretty">
             Browse our collection of premium products. Easy ordering via WhatsApp with fast delivery across Baku,
