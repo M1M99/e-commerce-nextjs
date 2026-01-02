@@ -6,12 +6,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const productSlugs = await getAllProductSlugs()
 
-  // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changefreq: "daily",   // 🔹 burada changefreq olmalıdır
+      changefreq: "daily",  // 🔹 düzgün açar
       priority: 1,
     },
     {
@@ -23,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   const productPages: MetadataRoute.Sitemap = productSlugs.map((slug) => {
-    const cleanSlug = slug.startsWith("/") ? slug.slice(1) : slug
+    const cleanSlug = slug.replace(/^\/+/, "")  
     return {
       url: `${baseUrl}/products/${cleanSlug}`,
       lastModified: new Date(),
