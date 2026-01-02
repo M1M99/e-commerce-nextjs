@@ -230,16 +230,16 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Monday - Friday</span>
-                      <span className="font-medium">9:00 AM - 8:00 PM</span>
+                      <span className="text-muted-foreground">B.E - Cumə</span>
+                      <span className="font-medium">9:00 - 23:00</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Saturday</span>
-                      <span className="font-medium">10:00 AM - 6:00 PM</span>
+                      <span className="text-muted-foreground">Şənbə</span>
+                      <span className="font-medium">8:00 - 23:00</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Sunday</span>
-                      <span className="font-medium">10:00 AM - 4:00 PM</span>
+                      <span className="text-muted-foreground">Bazar</span>
+                      <span className="font-medium">8:00 - 23:00</span>
                     </div>
                   </div>
                 </CardContent>
