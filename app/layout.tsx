@@ -9,9 +9,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vitaminaz.vercel.app"),
   title: {
-    default: "Online Shopping in Baku, Azerbaijan | Baku Shop",
+    default: "Online Vitamin Baku, Azerbaijan | Baku Vitamin",
     template: "%s | Baku Shop",
   },
   description:
