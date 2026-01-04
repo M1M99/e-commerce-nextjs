@@ -5,12 +5,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CartButton } from "@/components/cart-button"
 
 export const metadata: Metadata = {
-  title: "Contact Us - Baku Shop",
-  description:
-    "Get in touch with Baku Shop. Contact us via WhatsApp for fast ordering and customer support in Baku, Azerbaijan.",
+  title: "VitaminAz | Contact Us",
+  description: "Get in touch with VitaminAz in Baku, Azerbaijan. WhatsApp orders and support.",
   openGraph: {
-    title: "Contact Us - Baku Shop",
-    description: "Get in touch with Baku Shop for fast ordering and support",
+  title: "VitaminAz | Contact Us",
+    description: "Get in touch with Vitamin AZ for fast ordering and support",
     type: "website",
   },
   alternates: {
@@ -26,7 +25,7 @@ export default function ContactPage() {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Baku Shop",
+    name: "vitaminaz",
     description: "Online shopping in Baku, Azerbaijan",
     address: {
       "@type": "PostalAddress",
@@ -51,7 +50,7 @@ export default function ContactPage() {
         <header className="border-b bg-background sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <h1 className="text-2xl font-bold">
-              <a href="/">Baku Shop</a>
+              <a href="/">VitaminAz</a>
             </h1>
             <nav className="flex items-center gap-6">
               <a href="/" className="text-sm font-medium hover:text-primary">
@@ -253,7 +252,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <h3 className="font-semibold mb-3">Baku Shop</h3>
+                <h3 className="font-semibold mb-3">VitaminAz</h3>
                 <p className="text-sm text-muted-foreground text-pretty">
                   Your trusted online shop in Baku, Azerbaijan. Quality products with fast delivery.
                 </p>
@@ -283,7 +282,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-              <p>&copy; {new Date().getFullYear()} Baku Shop. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} VitaminAz. All rights reserved.</p>
             </div>
           </div>
         </footer>
