@@ -11,19 +11,20 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vitaminaz.vercel.app"),
   title: {
-    default: "Online Vitamin Baku, Azerbaijan | Baku Vitamin",
-    template: "%s | Baku Shop",
+    default: "VitaminAz | Online Shopping in Baku, Azerbaijan",
+    template: "%s | VitaminAz",
   },
   description:
-    "Shop quality products online in Baku, Azerbaijan. Electronics, clothing, home goods and more. Easy WhatsApp ordering with fast delivery across Baku.",
+    "VitaminAz is an online shopping platform in Baku, Azerbaijan. Buy electronics, clothing, home goods and more with fast delivery and easy WhatsApp ordering.",
   keywords: [
+    "vitaminaz",
     "online shopping Baku",
     "Azerbaijan e-commerce",
     "buy online Azerbaijan",
     "Baku online store",
     "WhatsApp shopping Azerbaijan",
   ],
-  authors: [{ name: "Baku Shop" }],
+  authors: [{ name: "VitaminAz" }],
   icons: {
     icon: "/favicon.ico?v=2",          
     shortcut: "favicon-v2.ico",
@@ -32,13 +33,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Baku Shop",
-    title: "Online Shopping in Baku, Azerbaijan",
-    description: "Shop quality products online in Baku with easy WhatsApp ordering",
+    siteName: "VitaminAz",
+    title: "VitaminAz | Online Shopping in Baku, Azerbaijan",
+    description:
+      "Shop quality products online in Baku with fast delivery and easy WhatsApp ordering.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online Shopping in Baku, Azerbaijan",
+    title: "VitaminAz | Online Shopping in Baku, Azerbaijan",
     description: "Shop quality products online in Baku with easy WhatsApp ordering",
   },
   robots: {
