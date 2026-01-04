@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   authors: [{ name: "VitaminAz" }],
   icons: {
     icon: "/favicon.ico?v=2",          
-    shortcut: "favicon-v2.ico",
-    apple: "favicon-v2.ico"
+    shortcut: "/favicon.ico?v=2",
+    apple: "/favicon.ico?v=2"
   },
   openGraph: {
     type: "website",
