@@ -3,26 +3,48 @@ import { ProductCard } from "@/components/product-card"
 import { CartButton } from "@/components/cart-button"
 import type { Metadata } from "next"
 
+// export const metadata: Metadata = {
+//   title: "Online Shopping in Baku, Azerbaijan | Quality Products at Best Prices",
+//   description:
+//     "Shop the best products online in Baku, Azerbaijan. Wide selection of electronics, clothing, home goods and more. Fast delivery across Baku. Order via WhatsApp.",
+//   keywords: "online shopping Baku, Azerbaijan e-commerce, buy online Baku, products Azerbaijan",
+//   openGraph: {
+//     title: "Online Shopping in Baku, Azerbaijan",
+//     description: "Shop quality products online in Baku with fast delivery",
+//     type: "website",
+//     locale: "en_US",
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Online Shopping in Baku, Azerbaijan",
+//     description: "Shop quality products online in Baku with fast delivery",
+//   },
+//   alternates: {
+//     canonical: "/",
+//   },
+// }
+
 export const metadata: Metadata = {
-  title: "Online Shopping in Baku, Azerbaijan | Quality Products at Best Prices",
+  title: "VitaminAz | Online Shopping in Baku, Azerbaijan",
   description:
-    "Shop the best products online in Baku, Azerbaijan. Wide selection of electronics, clothing, home goods and more. Fast delivery across Baku. Order via WhatsApp.",
-  keywords: "online shopping Baku, Azerbaijan e-commerce, buy online Baku, products Azerbaijan",
+    "VitaminAz is an online shopping platform in Baku, Azerbaijan. Buy electronics, clothing, home goods and more with fast delivery and easy WhatsApp ordering.",
+  keywords: "vitaminaz, online shopping Baku, Azerbaijan e-commerce, buy online Baku, products Azerbaijan",
   openGraph: {
-    title: "Online Shopping in Baku, Azerbaijan",
+    title: "VitaminAz | Online Shopping in Baku, Azerbaijan",
     description: "Shop quality products online in Baku with fast delivery",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online Shopping in Baku, Azerbaijan",
+    title: "VitaminAz | Online Shopping in Baku, Azerbaijan",
     description: "Shop quality products online in Baku with fast delivery",
   },
   alternates: {
     canonical: "/",
   },
 }
+
 
 export const revalidate = 3600 // ISR: Revalidate every hour
 
@@ -35,7 +57,7 @@ export default async function HomePage() {
       <header className="border-b bg-background sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold">
-            <a href="/">Baku Shop</a>
+            <a href="/">VitaminAz</a>
           </h1>
           <nav className="flex items-center gap-6">
             <a href="/" className="text-sm font-medium hover:text-primary">
