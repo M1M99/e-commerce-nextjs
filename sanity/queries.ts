@@ -1,6 +1,4 @@
 import { groq } from "next-sanity"
-
-// Get all products for listing page
 export const PRODUCTS_QUERY = groq`
   *[_type == "product"] | order(_createdAt desc) {
     _id,
@@ -14,8 +12,6 @@ export const PRODUCTS_QUERY = groq`
     metaDescription
   }
 `
-
-// Get single product by slug
 export const PRODUCT_BY_SLUG_QUERY = groq`
   *[_type == "product" && slug.current == $slug][0] {
     _id,
@@ -37,13 +33,9 @@ export const PRODUCT_BY_SLUG_QUERY = groq`
     _updatedAt
   }
 `
-
-// Get all product slugs for generateStaticParams
 export const PRODUCT_SLUGS_QUERY = groq`
   *[_type == "product" && defined(slug.current)][].slug.current
 `
-
-// Get products by category
 export const PRODUCTS_BY_CATEGORY_QUERY = groq`
   *[_type == "product" && category == $category] | order(_createdAt desc) {
     _id,
@@ -54,5 +46,42 @@ export const PRODUCTS_BY_CATEGORY_QUERY = groq`
     "mainImageAlt": mainImage.alt,
     availability,
     category
+  }
+`
+
+export const POSTS_QUERY = groq`
+  *[_type == "blog" && defined(slug.current)] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    "mainImageUrl": mainImage.asset->url,
+    "excerpt": array::join(string::split((pt::text(body))[0..200], "")[0..200], "") + "..."
+  }
+`
+
+export const POST_BY_SLUG_QUERY = groq`
+  *[_type == "blog" && slug.current == $slug][0] {
+    title,
+    slug,
+    mainImage {
+      alt,
+      asset->{
+        url
+      }
+    },
+    publishedAt,
+    body,
+    author->{
+      name,
+      image
+    },
+    relatedProduct->{
+      title,
+      "slug": slug.current,
+      "imageUrl": mainImage.asset->url,
+      price,
+      availability
+    }
   }
 `
