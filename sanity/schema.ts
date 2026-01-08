@@ -1,5 +1,10 @@
 import { defineField, defineType } from "sanity"
+import { blogType } from "./schemaTypes/blog" // və ya postType
+import { authorType } from "./schemaTypes/authorType"
+import { categoryType } from "./schemaTypes/categoryType"
+import { blockContentType } from "./schemaTypes/blockContentType"
 
+// Sizin Product Sminiz ( olduğu kimi qalır )
 export const productSchema = defineType({
   name: "product",
   title: "Product",
@@ -15,10 +20,7 @@ export const productSchema = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
+      options: { source: "title", maxLength: 96 },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -43,12 +45,6 @@ export const productSchema = defineType({
             { title: "Bullet", value: "bullet" },
             { title: "Numbered", value: "number" },
           ],
-          marks: {
-            decorators: [
-              { title: "Strong", value: "strong" },
-              { title: "Emphasis", value: "em" },
-            ],
-          },
         },
       ],
       validation: (Rule) => Rule.required(),
@@ -57,38 +53,15 @@ export const productSchema = defineType({
       name: "mainImage",
       title: "Main Image",
       type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: "alt",
-          title: "Alt Text",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-      ],
+      options: { hotspot: true },
+      fields: [{ name: "alt", title: "Alt Text", type: "string", validation: (Rule) => Rule.required() }],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "gallery",
       title: "Gallery Images",
       type: "array",
-      of: [
-        {
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            {
-              name: "alt",
-              title: "Alt Text",
-              type: "string",
-            },
-          ],
-        },
-      ],
+      of: [{ type: "image", options: { hotspot: true }, fields: [{ name: "alt", title: "Alt Text", type: "string" }] }],
     }),
     defineField({
       name: "availability",
@@ -122,14 +95,12 @@ export const productSchema = defineType({
       name: "metaTitle",
       title: "SEO Meta Title",
       type: "string",
-      description: "Recommended: 50-60 characters. If empty, product title will be used.",
       validation: (Rule) => Rule.max(60),
     }),
     defineField({
       name: "metaDescription",
       title: "SEO Meta Description",
       type: "text",
-      description: "Recommended: 150-160 characters",
       validation: (Rule) => Rule.max(160),
     }),
   ],
@@ -152,5 +123,11 @@ export const productSchema = defineType({
 })
 
 export const schema = {
-  types: [productSchema],
+  types: [
+    productSchema,    
+    blogType,         
+    authorType,       
+    categoryType,     
+    blockContentType  
+  ],
 }
