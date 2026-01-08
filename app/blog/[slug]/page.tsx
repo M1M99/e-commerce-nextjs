@@ -56,7 +56,6 @@ export default async function BlogPostPage({ params }: Props) {
       name: post.author?.name || "VitaminAz Team",
     },
     description: post.excerpt,
-    // SEO Boost: Google-a deyirik ki, bu məqalənin əsas məqsədi bu məhsulu tanıtmaqdır
     mainEntity: product ? {
         "@type": "Product",
         name: product.title,
@@ -243,7 +242,6 @@ export default async function BlogPostPage({ params }: Props) {
               )}
             </div>
 
-            {/* Populyar Kateqoriyalar */}
             <nav className="bg-gray-50 rounded-xl p-6 border" aria-label="Populyar Kateqoriyalar">
               <h4 className="font-bold mb-4 text-gray-900">Populyar Kateqoriyalar</h4>
               <ul className="space-y-3 text-sm">
