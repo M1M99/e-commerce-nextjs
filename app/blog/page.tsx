@@ -17,7 +17,6 @@ export const metadata = {
 export default async function BlogPage() {
   const posts = await getPosts()
 
-  // SEO: Google üçün Structured Data (Schema Markup)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -37,7 +36,6 @@ export default async function BlogPage() {
 
   return (
     <>
-      {/* Schema Markup-ı səhifəyə əlavə edirik */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -68,8 +66,7 @@ export default async function BlogPage() {
                 href={`/blog/${post.slug.current}`} 
                 className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                {/* Şəkil Bölməsi */}
-                <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
+                <div className="relative w-full h-80 aspect-[16/9] overflow-hidden bg-gray-100">
                   {post.mainImageUrl ? (
                     <Image 
                       src={post.mainImageUrl} 
@@ -86,9 +83,7 @@ export default async function BlogPage() {
                   )}
                 </div>
 
-                {/* Məzmun Bölməsi */}
                 <div className="flex flex-col flex-1 p-6">
-                  {/* Tarix */}
                   <div className="flex items-center gap-2 text-xs text-blue-600 font-medium mb-3 uppercase tracking-wider">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeWidth="2"></rect>
@@ -125,4 +120,5 @@ export default async function BlogPage() {
       </div>
     </>
   )
+
 }
