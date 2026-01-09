@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // google: 'your-google-verification-code',
+     google: 'MOqHXF6rzDrviIWpnEBB5zyT6kBuOQ5rg6U8La-XI3s',
     // yandex: 'your-yandex-verification-code',
   },
     generator: 'v0.app'
