@@ -41,7 +41,7 @@ export default async function BlogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="container mx-auto px-4 py-16 bg-gray-50/50 min-h-screen">
+      <div className="container mx-auto px-4 py-14 bg-gray-50/50 min-h-screen">
         {/* Header Bölməsi */}
         <div className="text-center mb-12 max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
@@ -102,7 +102,7 @@ export default async function BlogPage() {
                     {post.title}
                   </h2>
                   
-                  <p className="text-gray-600 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed">
+                  <p className="text-gray-600 text-sm line-clamp-3 mb-4 flex-1 leading-relaxed">
                     {post.excerpt}
                   </p>
 
@@ -122,3 +122,4 @@ export default async function BlogPage() {
   )
 
 }
+
