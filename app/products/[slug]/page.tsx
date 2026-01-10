@@ -75,7 +75,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
   )
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
-  // Product Schema JSON-LD for SEO
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -91,7 +90,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
       availability: isInStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       seller: {
         "@type": "Organization",
-        name: "Baku Shop",
+        name: "VitaminAz",
+        alternateName: ["vitamin az", "Baku Shop", "Vitamin.az"],
       },
     },
   }
