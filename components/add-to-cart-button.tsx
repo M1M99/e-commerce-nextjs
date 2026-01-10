@@ -24,7 +24,6 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
     const existingItemIndex = cart.findIndex((item: any) => item._id === product._id)
 
     if (existingItemIndex > -1) {
-      // Increment quantity
       cart[existingItemIndex].quantity += 1
     } else {
       // Add new item
@@ -44,8 +43,8 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
     window.dispatchEvent(new Event("cartUpdated"))
 
     toast({
-      title: "Added to cart",
-      description: `${product.title} has been added to your cart.`,
+      title: "Səbətə əlavə olundu!",
+      description: `${product.title} səbətinizə əlavə edildi.`,
     })
 
     setTimeout(() => setIsAdding(false), 500)
