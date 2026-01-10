@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 }
 
 
-export const revalidate = 3600 // ISR: Revalidate every hour
+export const revalidate = 3600 
 
 export default async function HomePage() {
   const products = await getAllProducts()
@@ -74,14 +74,14 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="bg-muted/50 border-b">
         <div className="container mx-auto px-4 py-12 md:py-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Quality Products Delivered in Baku</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-balance">
+            Keyfiyyətli Məhsul, Sürətli Çatdırılma
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl text-pretty">
-            Browse our collection of premium products. Easy ordering via WhatsApp with fast delivery across Baku,
-            Azerbaijan.
+            Premium məhsul kolleksiyamızla tanış olun. Bakı daxili sürətli çatdırılma və WhatsApp vasitəsilə asan sifariş imkanı.
           </p>
         </div>
       </section>
-
       {/* Products Grid */}
       <main className="container mx-auto px-4 py-12">
         <div className="mb-8 flex items-center justify-between">
@@ -105,7 +105,6 @@ export default async function HomePage() {
           </div>
         )}
       </main>
-      {/* Footer */}
       <footer className="border-t bg-muted/30 mt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
