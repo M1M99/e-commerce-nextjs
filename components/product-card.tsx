@@ -25,7 +25,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {!isInStock && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/60">
               <Badge variant="destructive" className="text-sm">
-                Out of Stock
+                Əldə Yoxdu
               </Badge>
             </div>
           )}
@@ -40,7 +40,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <span className="text-2xl font-bold">{product.price} ₼</span>
           {isInStock && (
             <Badge variant="secondary" className="text-xs">
-              Available
+              Mövcuddur
             </Badge>
           )}
         </CardFooter>
