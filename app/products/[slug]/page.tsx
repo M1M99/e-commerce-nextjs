@@ -24,15 +24,13 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const product = await getProductBySlug(slug)
 
   if (!product) {
-    return {
-      title: "Product Not Found",
-    }
+    return { title: "Məhsul tapılmadı | VitaminAz" }
   }
 
-  const title = product.metaTitle || `${product.title} - Buy Online in Baku`
+  const title = product.metaTitle || `${product.title} | VitaminAz - Bakıda Onlayn Mağaza`
   const description =
     product.metaDescription ||
-    `Buy ${product.title} online in Baku, Azerbaijan. Price: ${product.price} AZN. Fast delivery via WhatsApp order.`
+    `${product.title} onlayn sifarişi. Bakı daxili sürətli çatdırılma. Qiymət: ${product.price} ₼. WhatsApp ilə asan sifariş.`
 
   const imageUrl = product.mainImageUrl
 
@@ -128,7 +126,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </a>
             <span>/</span>
             <a href="/" className="hover:text-foreground">
-              Products
+              Məhsullar
             </a>
             <span>/</span>
             <span className="text-foreground">{product.title}</span>
@@ -159,15 +157,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <span className="text-4xl font-bold">{product.price} ₼</span>
                   {isInStock ? (
                     <Badge variant="default" className="bg-green-600">
-                      In Stock
+                      Stokda var
                     </Badge>
                   ) : (
-                    <Badge variant="destructive">Out of Stock</Badge>
+                    <Badge variant="destructive">Bitib</Badge>
                   )}
                 </div>
               </div>
 
-              {/* Description */}
               {product.description && (
                 <div className="prose prose-sm max-w-none mb-8">
                   <PortableText value={product.description} components={portableTextComponents} />
@@ -187,15 +184,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </Button>
               </div>
 
-              {/* Additional Info */}
               <div className="mt-8 pt-8 border-t space-y-3 text-sm">
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Delivery</span>
-                  <span className="font-medium">Available in Baku, Azerbaijan</span>
+                  <span className="text-muted-foreground">Çatdırılma</span>
+                  <span className="font-medium">Bakı daxili sürətli çatdırılma</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Payment</span>
-                  <span className="font-medium">Cash on Delivery</span>
+                  <span className="text-muted-foreground">Ödəniş</span>
+                  <span className="font-medium">Qapıda nağd</span>
                 </div>
               </div>
             </div>
@@ -207,13 +203,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <h3 className="font-semibold mb-3">Baku Shop</h3>
+                <h3 className="font-semibold mb-3">VitaminAz</h3>
                 <p className="text-sm text-muted-foreground text-pretty">
-                  Your trusted online shop in Baku, Azerbaijan. Quality products with fast delivery.
+                  Bakıda güvənli onlayn alış-veriş. Keyfiyyətli məhsullar və sürətli çatdırılma.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold mb-3">Quick Links</h3>
+                <h3 className="font-semibold mb-3">Keçidlər</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <a href="/" className="text-muted-foreground hover:text-foreground">
@@ -222,7 +218,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   </li>
                   <li>
                     <a href="/contact" className="text-muted-foreground hover:text-foreground">
-                      Contact Us
+                      Bizimlə Əlaqə
                     </a>
                   </li>
                 </ul>
