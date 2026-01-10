@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   description:
     "VitaminAz - Bakıda ən keyfiyyətli vitaminlər, kosmetika və qida əlavələri. Vitamin Azərbaycanda onlayn sifariş, qapıya sürətli çatdırılma və sərfəli qiymətlər.",
   keywords: [
-    "VitaminAz",      // Sizi Top 3-də saxlayan əsas brend
-    "Vitamin Az",     // Yeni hədəf (Boşluqlu)
-    "vitamin az",     // Kiçik hərflə
-    "vitaminaz",      // Mövqeyi qorumaq üçün
+    "VitaminAz",      
+    "Vitamin Az",     
+    "vitamin az",     
+    "vitaminaz",      
     "vitamin.az",     
     "Baku Shop", 
     "Onlayn Aptek",
@@ -40,9 +40,6 @@ export const revalidate = 3600
 export default async function HomePage() {
   const products = await getAllProducts()
   
-  // -------------------------------------------------------
-  // ANA SƏHİFƏ ÜÇÜN SCHEMA (Organization + WebSite)
-  // -------------------------------------------------------
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -53,7 +50,7 @@ export default async function HomePage() {
         "url": "https://vitaminaz.vercel.app",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://vitaminaz.vercel.app/icon.svg",
+          "url": "https://vitaminaz.vercel.app/favicon.ico?v=2",
           "width": 112,
           "height": 112
         },
