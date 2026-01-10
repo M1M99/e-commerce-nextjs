@@ -39,10 +39,8 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
       })
     }
 
-    // Save to localStorage
     localStorage.setItem("cart", JSON.stringify(cart))
 
-    // Dispatch custom event for cart updates
     window.dispatchEvent(new Event("cartUpdated"))
 
     toast({
@@ -55,7 +53,7 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
 
   return (
     <Button onClick={addToCart} disabled={isAdding} className="w-full" size="lg">
-      {isAdding ? "Adding..." : "Add to Cart"}
+        {isAdding ? "Əlavə edilir..." : "Səbətə At"}
     </Button>
   )
 }
