@@ -158,6 +158,11 @@ export default async function HomePage() {
                     </a>
                   </li>
                   <li>
+                    <a href="/blog" className="text-muted-foreground hover:text-foreground">
+                      Blog & Məqalələr
+                    </a>
+                  </li>
+                  <li>
                     <a href="/contact" className="text-muted-foreground hover:text-foreground">
                       Bizimlə Əlaqə
                     </a>
