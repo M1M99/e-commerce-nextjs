@@ -35,7 +35,7 @@ export default function ContactPage() {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "VitaminAz",
+    name: "vitaminaz",
     description: "Bakıda onlayn vitamin və qida əlavələri mağazası",
     address: {
       "@type": "PostalAddress",
