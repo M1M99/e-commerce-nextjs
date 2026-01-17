@@ -197,7 +197,9 @@ export default async function HomePage() {
                 <p className="text-sm text-muted-foreground">
                   Xidmət ərazisi: Bakı, Azərbaycan
                   <br />
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   WhatsApp İlə Sifariş
+                </a>
                 </p>
               </div>
             </div>
