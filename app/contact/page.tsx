@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { MapPin, MessageCircle } from "lucide-react"
+import { Instagram, MapPin, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CartButton } from "@/components/cart-button"
@@ -85,6 +85,23 @@ export default function ContactPage() {
 
         {/* Contact Content */}
         <main className="container mx-auto px-4 py-12">
+          <div className="max-w-5xl mx-auto mb-10">
+            <div className="p-6 bg-pink-50/50 rounded-2xl border border-pink-100 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div>
+                <h2 className="text-xl font-semibold text-pink-950">Sosial Mediada Bizi İzləyin</h2>
+                <p className="text-pink-800/80 text-sm">Ən son yeniliklər və endirimlərdən xəbərdar olun.</p>
+              </div>
+              <a 
+                href="https://www.instagram.com/vitaminaz.shop" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-medium shadow-md hover:shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-0.5"
+              >
+                <Instagram className="w-5 h-5" />
+                <span>@vitaminaz.shop</span>
+              </a>
+            </div>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="space-y-6">
               <Card>
