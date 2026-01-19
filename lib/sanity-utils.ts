@@ -67,15 +67,13 @@ export async function getAllProductSlugs(): Promise<string[]> {
 
 export async function getPosts(): Promise<BlogPost[]> {
   try {
-    const data = await client.fetch(POSTS_QUERY, {}, { next: { revalidate: 0 } }) // Cache-i söndürdük
-    console.log("SANITY-dən GƏLƏN MƏLUMAT:", data) // Terminala baxın
+    const data = await client.fetch(POSTS_QUERY, {}, { next: { revalidate: 3600 }}) 
     return data
   } catch (error) {
     console.error("Xəta:", error)
     return []
   }
 }
-
 
 
 export async function getPost(slug: string): Promise<BlogPost | null> {
