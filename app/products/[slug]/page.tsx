@@ -108,10 +108,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </h1>
             <nav className="flex items-center gap-6">
               <a href="/" className="text-sm font-medium hover:text-primary">
-                Products
+                Məhsullar
               </a>
               <a href="/contact" className="text-sm font-medium hover:text-primary">
-                Contact
+                Əlaqə
               </a>
               <CartButton />
             </nav>
@@ -136,7 +136,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* Product Content */}
         <main className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Images */}
             <div>
               <ImageGallery
                 mainImage={{ url: product.mainImageUrl, alt: product.mainImageAlt }}
@@ -198,7 +197,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </main>
 
-        {/* Footer */}
         <footer className="border-t bg-muted/30 mt-16">
           <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
