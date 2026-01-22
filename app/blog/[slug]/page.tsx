@@ -135,14 +135,14 @@ export default async function BlogPostPage({ params }: Props) {
             </header>
 
             {imageUrl && (
-              <div className="relative w-full aspect-video mb-10 rounded-xl overflow-hidden shadow-md">
+              <div className="relative w-full aspect-video mb-10 rounded-xl overflow-hidden shadow-md min-h-72.25"> 
                 <Image
                   src={imageUrl}
                   alt={`VitaminAz Blog - ${post.title}`}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                   priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 800px" // SEO: Sürət üçün vacib
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 800px"
                 />
               </div>
             )}
