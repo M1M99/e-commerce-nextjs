@@ -11,18 +11,19 @@
 // export const metadata: Metadata = {
 //   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vitaminaz.vercel.app"),
 //   title: {
-//     default: "VitaminAz | Online Shopping in Baku, Azerbaijan",
+//     default: "VitaminAz | Bakıda Vitamin və Supplement Sifarişi",
 //     template: "%s | VitaminAz",
 //   },
 //   description:
-//     "VitaminAz is an online shopping platform in Baku, Azerbaijan. Buy electronics, clothing, home goods and more with fast delivery and easy WhatsApp ordering.",
+//     "VitaminAz - Bakıda ən keyfiyyətli vitaminlər, saç və dəri baxım vasitələri, idman qidaları. Sürətli çatdırılma və orijinal məhsullar.",
 //   keywords: [
 //     "vitaminaz",
-//     "online shopping Baku",
-//     "Azerbaijan e-commerce",
-//     "buy online Azerbaijan",
-//     "Baku online store",
-//     "WhatsApp shopping Azerbaijan",
+//     "vitamin sifarişi Bakı",
+//     "onlayn aptek",
+//     "saç tökülməsinə qarşı",
+//     "idman qidaları",
+//     "Bakıda vitamin",
+//     "vitamin az",
 //   ],
 //   authors: [{ name: "VitaminAz" }],
 //   icons: {
@@ -32,16 +33,16 @@
 //   },
 //   openGraph: {
 //     type: "website",
-//     locale: "en_US",
+//     locale: "az_AZ", // Dili Azərbaycan dilinə dəyişdik
 //     siteName: "VitaminAz",
-//     title: "VitaminAz | Online Shopping in Baku, Azerbaijan",
+//     title: "VitaminAz | Bakıda Vitamin və Kosmetika Sifarişi",
 //     description:
-//       "Shop quality products online in Baku with fast delivery and easy WhatsApp ordering.",
+//       "Orijinal vitaminlər, minerallar və kosmetika məhsulları. Qapıya çatdırılma xidməti.",
 //   },
 //   twitter: {
 //     card: "summary_large_image",
-//     title: "VitaminAz | Online Shopping in Baku, Azerbaijan",
-//     description: "Shop quality products online in Baku with easy WhatsApp ordering",
+//     title: "VitaminAz | Bakıda Onlayn Vitamin Mağazası",
+//     description: "Sürətli çatdırılma ilə orijinal vitamin və kosmetika sifarişi.",
 //   },
 //   robots: {
 //     index: true,
@@ -56,7 +57,6 @@
 //   },
 //   verification: {
 //      google: 'MOqHXF6rzDrviIWpnEBB5zyT6kBuOQ5rg6U8La-XI3s',
-//     // yandex: 'your-yandex-verification-code',
 //   },
 //     generator: 'v0.app'
 // }
@@ -76,7 +76,8 @@
 //   children: React.ReactNode
 // }>) {
 //   return (
-//     <html lang="en">
+//     // Dili "en" yox, "az" etdik ki, Google Azərbaycan dili olduğunu bilsin
+//     <html lang="az"> 
 //       <body className={`font-sans antialiased`}>
 //         {children}
 //         <Toaster />
@@ -94,8 +95,16 @@ import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+// Şriftləri dəyişənlərə (variable) bağlayırıq ki, Tailwind ilə işləsin
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+})
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vitaminaz.vercel.app"),
@@ -107,22 +116,25 @@ export const metadata: Metadata = {
     "VitaminAz - Bakıda ən keyfiyyətli vitaminlər, saç və dəri baxım vasitələri, idman qidaları. Sürətli çatdırılma və orijinal məhsullar.",
   keywords: [
     "vitaminaz",
+    "vitamin az", // Bunu xüsusi əlavə etdik
+    "vitamin.az",
     "vitamin sifarişi Bakı",
     "onlayn aptek",
     "saç tökülməsinə qarşı",
     "idman qidaları",
     "Bakıda vitamin",
-    "vitamin az",
+    "orzax bakı", // Populyar brendlər əlavə etmək faydalıdır
+    "solgar bakı",
   ],
   authors: [{ name: "VitaminAz" }],
   icons: {
-    icon: "/favicon.ico?v=2",          
+    icon: "/favicon.ico?v=2",
     shortcut: "/favicon.ico?v=2",
-    apple: "/favicon.ico?v=2"
+    apple: "/favicon.ico?v=2",
   },
   openGraph: {
     type: "website",
-    locale: "az_AZ", // Dili Azərbaycan dilinə dəyişdik
+    locale: "az_AZ",
     siteName: "VitaminAz",
     title: "VitaminAz | Bakıda Vitamin və Kosmetika Sifarişi",
     description:
@@ -145,9 +157,9 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-     google: 'MOqHXF6rzDrviIWpnEBB5zyT6kBuOQ5rg6U8La-XI3s',
+    google: 'MOqHXF6rzDrviIWpnEBB5zyT6kBuOQ5rg6U8La-XI3s',
   },
-    generator: 'v0.app'
+  generator: 'v0.app',
 }
 
 export const viewport = {
@@ -164,10 +176,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  
+  // Google üçün Strukturlaşdırılmış Məlumat (Schema Markup)
+  // Bu hissə "Vitamin Az" (ayrı) axtarışında çıxmaq üçün ən vacib yerdir.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vitaminaz",
+    "url": "https://vitaminaz.vercel.app",
+    "logo": "https://vitaminaz.vercel.app/favicon.ico",
+    "alternateName": ["Vitamin Az", "Vitamin.az", "Vitamin Baku"], // ƏSAS HİSSƏ: Google-a alternativ adları deyirik
+    "description": "Bakıda orijinal vitamin və supplementlərin onlayn satışı.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Baku",
+      "addressCountry": "AZ"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "areaServed": "AZ",
+      "availableLanguage": ["Azerbaijani", "Russian"]
+    }
+  };
+
   return (
-    // Dili "en" yox, "az" etdik ki, Google Azərbaycan dili olduğunu bilsin
-    <html lang="az"> 
-      <body className={`font-sans antialiased`}>
+    <html lang="az">
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+        {/* JSON-LD Skriptini bura əlavə edirik */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        
         {children}
         <Toaster />
         <Analytics />
