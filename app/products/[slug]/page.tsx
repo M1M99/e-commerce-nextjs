@@ -133,7 +133,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </nav>
         </div>
 
-        {/* Product Content */}
         <main className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div>
@@ -211,7 +210,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <ul className="space-y-2 text-sm">
                   <li>
                     <a href="/" className="text-muted-foreground hover:text-foreground">
-                      Home
+                      Ana Səhifə
                     </a>
                   </li>
                   <li>
