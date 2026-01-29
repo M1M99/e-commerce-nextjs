@@ -204,7 +204,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-             <p>&copy; {new Date().getFullYear()} Baku Shop. All rights reserved.</p>
+             <p>&copy; {new Date().getFullYear()} VitaminAz. All rights reserved.</p>
            </div>
           </div>
         </footer>
