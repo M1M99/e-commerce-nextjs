@@ -124,7 +124,7 @@ export function CartButton() {
                 </Button>
 
                 <Button variant="outline" className="w-full bg-transparent" onClick={clearCart}>
-                  Clear Cart
+                  Səbəti Təmizlə
                 </Button>
               </div>
             </>
