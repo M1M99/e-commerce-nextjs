@@ -148,7 +148,7 @@ export default async function HomePage() {
               <div>
                 <h3 className="font-semibold mb-3">VitaminAz</h3>
                 <p className="text-sm text-muted-foreground text-pretty">
-                  Bakıda güvənli onlayn alış-veriş. Keyfiyyətli məhsullar və sürətli çatdırılma.
+                    Vitamin Az (VitaminAz) - Bakıda güvənli onlayn alış-veriş. Keyfiyyətli məhsullar və sürətli çatdırılma.
                 </p>
                 <div className="flex gap-3 mt-2">
                   <a
