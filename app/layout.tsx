@@ -110,7 +110,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vitaminaz.vercel.app"),
   title: {
     default: "VitaminAz | Bakıda Vitamin və Supplement Sifarişi",
-    template: "%s | VitaminAz",
+    template: "%s | VitaminAz (Vitamin Az)",
   },
   description:
     "VitaminAz - Bakıda ən keyfiyyətli vitaminlər, saç və dəri baxım vasitələri, idman qidaları. Sürətli çatdırılma və orijinal məhsullar.",
