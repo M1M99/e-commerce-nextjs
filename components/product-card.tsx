@@ -17,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative aspect-square overflow-hidden bg-muted">
           <Image
             src={product.mainImageUrl || "/placeholder.svg"}
-            alt={product.mainImageAlt}
+            alt={product.mainImageAlt ?? `${product.title} - VitaminAz`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform group-hover:scale-105 bg-white"
