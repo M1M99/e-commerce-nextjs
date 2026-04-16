@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion"
 import { CartButton } from "@/components/cart-button"
 // import { ThemeToggle } from "@/components/theme-toggle"
-import { SearchBar } from "@/components/search-bar"
+// import { SearchBar } from "@/components/search-bar"
 // import { getAllProducts } from "@/lib/sanity-utils"
 import { Instagram } from "lucide-react"
 
@@ -31,7 +31,7 @@ export const metadata = {
 }
 
 export default async function FAQPage() {
-  const products = await getAllProducts()
+  // const products = await getAllProducts()
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -127,7 +127,7 @@ export default async function FAQPage() {
               <a href="/contact" className="text-sm font-medium hover:text-primary">
                 Əlaqə
               </a>
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <CartButton />
             </nav>
           </div>
