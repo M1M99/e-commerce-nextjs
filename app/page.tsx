@@ -3,6 +3,7 @@ import { ProductCard } from "@/components/product-card"
 import { CartButton } from "@/components/cart-button"
 import type { Metadata } from "next"
 import { Instagram } from "lucide-react"
+import { SearchBar } from "@/components/search-bar"
 
 export const metadata: Metadata = {
   title: "VitaminAz | Bakıda Onlayn Mağaza və Sürətli Çatdırılma",
@@ -95,6 +96,7 @@ export default async function HomePage() {
               <a href="/">VitaminAz</a>
             </h1>
             <nav className="flex items-center gap-6">
+              <SearchBar products={products}/>
               <a href="/" className="text-sm font-medium hover:text-primary">
                 Məhsullar
               </a>
