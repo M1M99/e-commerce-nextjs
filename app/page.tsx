@@ -97,7 +97,8 @@ export default async function HomePage() {
             </h1>
             <nav className="flex items-center gap-6">
               <SearchBar products={products}/>
-              <a href="/" className="text-sm font-medium hover:text-primary">
+              <a href="/" className="text-sm font-medium hover:text-primary hidden sm:flex">
+              {/* <a href="/" className="text-sm font-medium hover:text-primary"> */}
                 Məhsullar
               </a>
               <a href="/contact" className="text-sm font-medium hover:text-primary">
