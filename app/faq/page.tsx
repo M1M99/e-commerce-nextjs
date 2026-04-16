@@ -5,9 +5,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { CartButton } from "@/components/cart-button"
-import { ThemeToggle } from "@/components/theme-toggle"
+// import { ThemeToggle } from "@/components/theme-toggle"
 import { SearchBar } from "@/components/search-bar"
-import { getAllProducts } from "@/lib/sanity-utils"
+// import { getAllProducts } from "@/lib/sanity-utils"
 import { Instagram } from "lucide-react"
 
 export const metadata = {
@@ -120,7 +120,7 @@ export default async function FAQPage() {
               <a href="/">VitaminAz</a>
             </div>
             <nav className="flex items-center gap-6">
-              <SearchBar products={products} />
+              {/* <SearchBar products={products} /> */}
               <a href="/" className="text-sm font-medium hover:text-primary hidden sm:flex">
                 Məhsullar
               </a>
