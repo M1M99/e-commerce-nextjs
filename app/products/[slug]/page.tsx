@@ -221,9 +221,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-3">Location</h3>
+                <h3 className="font-semibold mb-3">Ünvan</h3>
                 <p className="text-sm text-muted-foreground">
-                  Serving Baku, Azerbaijan
+                  Xidmət ərazisi: Bakı, Azərbaycan
                   <br />
                     WhatsApp İlə Sifariş
                 </p>
