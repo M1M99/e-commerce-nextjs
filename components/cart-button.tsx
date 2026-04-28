@@ -89,7 +89,7 @@ export function CartButton() {
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-lg p-3">
         <SheetHeader>
-          <SheetTitle>Shopping Cart ({totalItems})</SheetTitle>
+          <SheetTitle>Səbət ({totalItems})</SheetTitle>
         </SheetHeader>
 
         <div className="flex flex-col h-full pt-6">
@@ -97,7 +97,7 @@ export function CartButton() {
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
                 <ShoppingCart className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                <p className="text-muted-foreground">Your cart is empty</p>
+                <p className="text-muted-foreground">Səbətinizdə məhsul yoxdur</p>
               </div>
             </div>
           ) : (
@@ -110,7 +110,7 @@ export function CartButton() {
 
               <div className="border-t pt-4 space-y-4">
                 <div className="flex items-center justify-between text-lg font-semibold">
-                  <span>Total:</span>
+                  <span>Cəmi:</span>
                   <span>{totalPrice.toFixed(2)} ₼</span>
                 </div>
 
