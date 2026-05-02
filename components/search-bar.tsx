@@ -14,7 +14,39 @@ import {
     CommandList,
 } from "@/components/ui/command"
 import type { Product } from "@/lib/sanity-utils"
-
+const EmptyState = ({ products, onSelect }: { products: Product[], onSelect: (slug: string) => void }) => {
+    const popularProducts = products.slice(0, 3);
+    return (
+        <div className="py-6 px-4 text-center">
+            <Search className="size-8 text-muted-foreground/30 mx-auto mb-3" />
+            <p className="text-sm font-medium text-foreground mb-1">Heç nə tapılmadı.</p>
+            <p className="text-xs text-muted-foreground mb-4">Axtarışınıza uyğun məhsul yoxdur, bəlkə bunlara göz atasınız?</p>
+            
+            {popularProducts.length > 0 && (
+                <div className="flex flex-col gap-1 mt-4 text-left">
+                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 px-2">Populyar Məhsullar</div>
+                    {popularProducts.map(p => (
+                        <div 
+                            key={`empty-${p._id}`}
+                            onClick={() => onSelect(p.slug.current)}
+                            className="flex items-center gap-3 cursor-pointer py-2 px-2 hover:bg-accent rounded-md transition-colors"
+                        >
+                            {p.mainImageUrl ? (
+                                <img src={p.mainImageUrl} alt={p.title} className="h-10 w-10 rounded-md object-cover flex-shrink-0" />
+                            ) : (
+                                <div className="h-10 w-10 rounded-md bg-muted flex-shrink-0" />
+                            )}
+                            <div className="flex-1 overflow-hidden text-left">
+                                <div className="truncate text-sm font-medium text-foreground">{p.title}</div>
+                                <div className="text-xs text-muted-foreground mt-0.5">{p.price} ₼</div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    )
+}
 export function SearchBar({ products = [] }: { products?: Product[] }) {
     const [openDialog, setOpenDialog] = React.useState(false)
     const [openDesktop, setOpenDesktop] = React.useState(false)
@@ -127,7 +159,10 @@ export function SearchBar({ products = [] }: { products?: Product[] }) {
                     {openDesktop && query.length > 0 && (
                         <div className="absolute top-12 right-0 w-[350px] bg-popover shadow-xl rounded-xl z-50 overflow-hidden border border-muted/50 transition-all animate-in fade-in slide-in-from-top-2">
                             <CommandList className="max-h-[350px] overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-muted-foreground/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/40 pr-1">
-                                <CommandEmpty className="py-6 text-center text-sm text-muted-foreground">Heç nə tapılmadı.</CommandEmpty>
+                                {/* <CommandEmpty className="py-6 text-center text-sm text-muted-foreground">Heç nə tapılmadı.</CommandEmpty> */}
+                                <CommandEmpty>
+                                    <EmptyState products={products} onSelect={(slug) => runCommandDesktop(() => router.push(`/products/${slug}`))} />
+                                </CommandEmpty>
                                 <CommandGroup heading="Məhsullar">
                                     {products.map((product) => (
                                         <CommandItem
