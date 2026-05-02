@@ -189,6 +189,11 @@ export default async function BlogPage() {
                       Blog & Məqalələr
                     </a>
                   </li>
+                   <li>
+                    <a href="/faq" className="text-muted-foreground hover:text-foreground">
+                      Tez-tez Verilən Suallar (FAQ)
+                    </a>
+                  </li>
                   <li>
                     <a href="/contact" className="text-muted-foreground hover:text-foreground">
                       Bizimlə Əlaqə
