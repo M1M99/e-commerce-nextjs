@@ -40,7 +40,9 @@ export default function ContactPage() {
     address: {
       "@type": "PostalAddress",
       addressLocality: "Baku",
+      "streetAddress": "Bakı daxili və rayonlara onlayn çatdırılma",
       addressCountry: "AZ",
+      "postalCode": "AZ1000", 
     },
     url: process.env.NEXT_PUBLIC_SITE_URL || "",
     telephone: `+${whatsappNumber}`,
@@ -56,7 +58,6 @@ export default function ContactPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
 
       <div className="min-h-screen">
-        
          <header className="border-b bg-background sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <h1 className="text-2xl font-bold">
