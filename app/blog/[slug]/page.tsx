@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </div>
 
                   <Link 
-                    href="/products" 
+                    href="/" 
                     className="block w-full bg-black text-white text-center py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                   >
                     Mağazaya Keç
