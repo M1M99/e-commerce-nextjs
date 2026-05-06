@@ -197,6 +197,11 @@ export default async function FAQPage() {
                       Ana Səhifə
                     </a>
                   </li>
+                   <li>
+                    <a href="/blog" className="text-muted-foreground hover:text-foreground">
+                      Blog & Məqalələr
+                    </a>
+                  </li>
                   <li>
                     <a href="/faq" className="text-muted-foreground hover:text-foreground font-medium text-foreground">
                       FAQ (Tez-tez verilən suallar)
