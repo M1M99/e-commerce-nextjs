@@ -220,7 +220,7 @@ export default async function FAQPage() {
                   Xidmət ərazisi: Bakı, Azərbaycan
                   <br />
                   <a 
-                  href="https://wa.me/994709001124?text=Salam, FAQ səhifəsindən yazıram, sualım var."
+                  href={whatsappUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium text-[#25D366] hover:text-[#128C7E] transition-colors mt-2"
