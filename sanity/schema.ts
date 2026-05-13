@@ -85,8 +85,6 @@ export const productSchema = defineType({
         list: [
           { title: "Electronics", value: "electronics" },
           { title: "Clothing", value: "clothing" },
-          { title: "Home & Garden", value: "home-garden" },
-          { title: "Books", value: "books" },
           { title: "Sports", value: "sports" },
         ],
       },
