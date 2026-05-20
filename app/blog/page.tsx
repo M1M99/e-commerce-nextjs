@@ -153,6 +153,22 @@ export default async function BlogPage() {
                 ))}
               </div>
             )}
+             <section className="mt-24 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 mx-auto">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                Sağlamlıq, Vitaminlər və Təbii Həyat Tərzi Bələdçiniz
+              </h2>
+              <div className="text-gray-600 space-y-5 leading-relaxed text-lg">
+                <p>
+                  <strong>VitaminAz Sağlamlıq Bloquna</strong> xoş gəlmisiniz! Bizim məqsədimiz sadəcə təbii məhsullar təqdim etmək deyil, həm də oxucularımızı sağlam həyat tərzi, düzgün qidalanma və orqanizmin ehtiyac duyduğu vitamin və minerallar haqqında geniş şəkildə maarifləndirməkdir. Burada mütəxəssis rəyləri, ən son elmi araşdırmalara əsaslanan faydalı məqalələr və gündəlik həyatınızda asanlıqla tətbiq edə biləcəyiniz praktiki tövsiyələr tapa bilərsiniz.
+                </p>
+                <p>
+                  Müasir və sürətli həyat ritmində sağlamlığımızı qorumaq hər zamankindən daha vacibdir. İstər <a href="/?cat=immunitet" className="text-blue-600 font-semibold hover:underline">immunitet sistemini gücləndirmək</a>, istər <a href="/?cat=sac" className="text-blue-600 font-semibold hover:underline">saç tökülməsinin qarşısını almaq</a>, istərsə də gələcəyimiz olan uşaqların sağlam böyüməsi üçün düzgün vitamin komplekslərini seçmək olsun — bloqumuzda axtardığınız ən vacib sualların cavablarını əldə edəcəksiniz. Hər bir məqalə oxucularımızın faydalanması, xəstəliklərdən təbii yollarla qorunması və daha sağlam qərarlar qəbul etməsi üçün xüsusi diqqətlə hazırlanır.
+                </p>
+                <p>
+                  Əgər siz də həm özünüzün, həm də yaxınlarınızın sağlamlığına dəyər verirsinizsə, mütəmadi olaraq yenilənən məqalələrimizi izləməyi unutmayın. Təqdim etdiyimiz orijinal və təbii məhsullarımızla tanış olmaq üçün birbaşa <a href="/" className="text-blue-600 font-semibold hover:underline">mağaza kataloqumuza</a> göz ata bilər və ya hər hansı sualınız üçün <a href="/contact" className="text-blue-600 font-semibold hover:underline">bizimlə əlaqə</a> saxlaya bilərsiniz. Unutmayın ki, sağlamlığınız sizin ən böyük sərvətinizdir, onu qorumaq üçün hər zaman yanınızdayıq!
+                </p>
+              </div>
+            </section>
           </div>
         </main>
 
