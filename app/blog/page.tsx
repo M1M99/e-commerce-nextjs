@@ -4,17 +4,29 @@ import { getPosts } from "@/lib/sanity-utils"
 import { CartButton } from "@/components/cart-button"
 import { Instagram } from "lucide-react"
 
+// export const metadata = {
+//   title: "Sağlamlıq Bloqu | VitaminAz",
+//   description: "Vitaminlər, sağlam qidalanma və həyat tərzi haqqında ən son məqalələr və faydalı məsləhətlər.",
+//   openGraph: {
+//     title: "Sağlamlıq Bloqu | VitaminAz",
+//     description: "Sağlamlıq haqqında faydalı məqalələr.",
+//     type: "website",
+//     locale: "az_AZ",
+//   },
+// }
 export const metadata = {
   title: "Sağlamlıq Bloqu | VitaminAz",
   description: "Vitaminlər, sağlam qidalanma və həyat tərzi haqqında ən son məqalələr və faydalı məsləhətlər.",
+  keywords: ["sağlamlıq bloqu", "vitaminlər", "sağlam qidalanma", "sağlam həyat tərzi", "təbii məhsullar", "immunitet", "saç tökülməsi"],
+  authors: [{ name: "VitaminAz" }],
+  publisher: "VitaminAz",
   openGraph: {
     title: "Sağlamlıq Bloqu | VitaminAz",
-    description: "Sağlamlıq haqqında faydalı məqalələr.",
+    description: "Vitaminlər, sağlam qidalanma və həyat tərzi haqqında ən son məqalələr, elmi araşdırmalar və faydalı məsləhətlər.",
     type: "website",
     locale: "az_AZ",
   },
 }
-
 export default async function BlogPage() {
   const posts = await getPosts()
 
