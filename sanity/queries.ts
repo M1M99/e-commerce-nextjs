@@ -49,6 +49,19 @@ export const PRODUCTS_BY_CATEGORY_QUERY = groq`
   }
 `
 
+export const RELATED_PRODUCTS_QUERY = groq`
+  *[_type == "product" && slug.current != $currentSlug][0...4] | order(_createdAt desc) {
+    _id,
+    title,
+    slug,
+    price,
+    "mainImageUrl": mainImage.asset->url,
+    "mainImageAlt": mainImage.alt,
+    availability,
+    category
+  }
+`
+
 export const POSTS_QUERY = groq`
   *[_type == "blog" && defined(slug.current)] | order(publishedAt desc) {
     _id,
