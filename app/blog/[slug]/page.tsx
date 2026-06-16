@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <div className="bg-gray-50/50 min-h-screen pb-20">
+    <div className="bg-gray-50/50 min-h-screen pb-20 dark:bg-slate-950/50">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -168,7 +168,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* --- SIDEBAR (ASIDE) --- */}
           <aside className="lg:col-span-4 space-y-8">
             
-            <div className="sticky top-24 bg-white border rounded-xl p-6 shadow-sm transition-all hover:shadow-md">
+            <div className="sticky top-24 bg-white border rounded-xl p-6 shadow-sm dark:from-slate-900 transition-all hover:shadow-md">
               
               {product ? (
                 <section aria-labelledby="related-product-title">
@@ -255,7 +255,7 @@ export default async function BlogPostPage({ params }: Props) {
               )}
             </div>
 
-            <nav className="bg-gray-50 rounded-xl p-6 border" aria-label="Populyar Kateqoriyalar">
+            <nav className="bg-gray-50 dark:bg-slate-900/50 dark:border-slate-800 rounded-xl p-6 border" aria-label="Populyar Kateqoriyalar">
               <h4 className="font-bold mb-4 text-gray-900">Populyar Kateqoriyalar</h4>
               <ul className="space-y-3 text-sm">
                 <li><Link href="/?cat=sac" className="flex items-center text-gray-600 hover:text-blue-600 transition group"><span className="w-2 h-2 rounded-full bg-gray-300 mr-2 group-hover:bg-blue-500 transition-colors"></span>Saç Tökülməsi</Link></li>
