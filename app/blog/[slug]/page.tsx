@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
       <main className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
-          <article className="lg:col-span-8 bg-background rounded-2xl shadow-sm border p-6 md:p-10">
+          <article className="lg:col-span-8 bg-background rounded-2xl shadow-sm border p-6 md:p-10 dark:bg-slate-900">
             <header className="mb-8">
               <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium text-xs">
