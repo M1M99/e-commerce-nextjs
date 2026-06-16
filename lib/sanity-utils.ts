@@ -4,6 +4,7 @@ import {
   PRODUCTS_QUERY, 
   PRODUCT_BY_SLUG_QUERY, 
   PRODUCT_SLUGS_QUERY,
+  RELATED_PRODUCTS_QUERY,
   POSTS_QUERY, 
   POST_BY_SLUG_QUERY 
 } from "@/sanity/queries"
@@ -86,5 +87,19 @@ export async function getPost(slug: string): Promise<BlogPost | null> {
   } catch (error) {
     console.error("Post gətirilərkən xəta:", error)
     return null
+  }
+}
+
+export async function getRelatedProducts(currentSlug: string): Promise<Product[]> {
+  try {
+    const products = await client.fetch(
+      RELATED_PRODUCTS_QUERY,
+      { currentSlug },
+      { next: { revalidate: 3600 } }
+    )
+    return products || []
+  } catch (error) {
+    console.error("Bənzər məhsullar gətirilərkən xəta:", error)
+    return []
   }
 }
