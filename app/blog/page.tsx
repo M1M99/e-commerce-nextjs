@@ -77,7 +77,7 @@ export default async function BlogPage() {
         </header>
 
         {/* Əsas Məzmun */}
-        <main className="flex-1 bg-gray-50/50">
+        {/* <main className="flex-1 bg-gray-50/50">
           <div className="container mx-auto px-4 py-14 min-h-screen">
             <div className="text-center mb-12 max-w-2xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
@@ -170,7 +170,109 @@ export default async function BlogPage() {
               </div>
             </section>
           </div>
-        </main>
+        </main> */}
+        <main className="flex-1 bg-gray-50/50 dark:bg-slate-950/50">
+            <div className="container mx-auto px-4 py-14 min-h-screen">
+              <div className="text-center mb-16 max-w-3xl mx-auto relative">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
+                <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 leading-tight">
+                  Sağlamlıq Bloqu
+                </h1>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Sağlamlığınız üçün ən son elmi araşdırmalar və faydalı məsləhətlər.
+                </p>
+              </div>
+
+              {posts.length === 0 ? (
+                <div className="flex flex-col items-center justify-center py-20 bg-white rounded-3xl border border-dashed border-gray-300">
+                  <span className="text-4xl mb-4">📝</span>
+                  <p className="text-lg text-gray-500 font-medium">Hələ heç bir məqalə paylaşılmayıb.</p>
+                  <p className="text-sm text-gray-400">Tezliklə yeni məqalələr burada olacaq.</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                  {posts.map((post) => (
+                    <Link 
+                      key={post._id} 
+                      href={`/blog/${post.slug.current}`} 
+                      className="group flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-gray-100 dark:border-slate-800 hover:border-primary/20 dark:hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                    >
+                      <div className="relative w-full h-72 overflow-hidden bg-gray-50">
+                        {post.mainImageUrl ? (
+                          <Image 
+                            src={post.mainImageUrl} 
+                            alt={post.title} 
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            priority={false}
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-gray-300">
+                            📷 Şəkil yoxdur
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+
+                      <div className="flex flex-col flex-1 p-8">
+                        <div className="flex items-center gap-2 text-xs text-primary font-bold mb-4 uppercase tracking-widest bg-primary/5 w-fit px-3 py-1.5 rounded-full">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeWidth="2.5"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6" strokeWidth="2.5"></line>
+                            <line x1="8" y1="2" x2="8" y2="6" strokeWidth="2.5"></line>
+                            <line x1="3" y1="10" x2="21" y2="10" strokeWidth="2.5"></line>
+                          </svg>
+                          {new Date(post.publishedAt).toLocaleDateString("az-AZ", {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                        </div>
+
+                        <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-4 line-clamp-2 group-hover:text-primary transition-colors leading-snug">
+                          {post.title}
+                        </h2>
+                        
+                        <p className="text-gray-600 text-base line-clamp-3 mb-6 flex-1 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+
+                        <div className="flex items-center text-sm font-bold text-primary mt-auto group/btn bg-primary/5 hover:bg-primary hover:text-white px-5 py-3 rounded-xl transition-colors w-fit">
+                          Oxumağa davam et
+                          <svg className="w-4 h-4 ml-2 transform transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+              <section className="mt-32 relative bg-gradient-to-br from-white to-gray-50/80 dark:from-slate-900 dark:to-slate-950 p-10 md:p-16 rounded-[2.5rem] shadow-xl shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-slate-800 mx-auto overflow-hidden">
+                {/* Background decors */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                
+                <div className="relative z-10 max-w-4xl mx-auto">
+                  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-8 tracking-tight text-center">
+                    Sağlamlıq, Vitaminlər və Təbii Həyat Tərzi Bələdçiniz
+                  </h2>
+                  <div className="text-gray-600 dark:text-gray-400 space-y-6 leading-relaxed text-lg md:text-xl text-justify md:text-left">
+                    <p>
+                      <strong className="text-gray-900 dark:text-white">VitaminAz Sağlamlıq Bloquna</strong> xoş gəlmisiniz! Bizim məqsədimiz sadəcə təbii məhsullar təqdim etmək deyil, həm də oxucularımızı sağlam həyat tərzi, düzgün qidalanma və orqanizmin ehtiyac duyduğu vitamin və minerallar haqqında geniş şəkildə maarifləndirməkdir. Burada mütəxəssis rəyləri, ən son elmi araşdırmalara əsaslanan faydalı məqalələr və gündəlik həyatınızda asanlıqla tətbiq edə biləcəyiniz praktiki tövsiyələr tapa bilərsiniz.
+                    </p>
+                    <p>
+                      Müasir və sürətli həyat ritmində sağlamlığımızı qorumaq hər zamankindən daha vacibdir. İstər <a href="/?cat=immunitet" className="text-primary font-bold hover:underline decoration-2 underline-offset-4">immunitet sistemini gücləndirmək</a>, istər <a href="/?cat=sac" className="text-primary font-bold hover:underline decoration-2 underline-offset-4">saç tökülməsinin qarşısını almaq</a>, istərsə də gələcəyimiz olan uşaqların sağlam böyüməsi üçün düzgün vitamin komplekslərini seçmək olsun — bloqumuzda axtardığınız ən vacib sualların cavablarını əldə edəcəksiniz.
+                    </p>
+                    <p>
+                      Əgər siz də həm özünüzün, həm də yaxınlarınızın sağlamlığına dəyər verirsinizsə, mütəmadi olaraq yenilənən məqalələrimizi izləməyi unutmayın. Təqdim etdiyimiz orijinal və təbii məhsullarımızla tanış olmaq üçün birbaşa <a href="/" className="text-primary font-bold hover:underline decoration-2 underline-offset-4">mağaza kataloqumuza</a> göz ata bilər və ya hər hansı sualınız üçün <a href="/contact" className="text-primary font-bold hover:underline decoration-2 underline-offset-4">bizimlə əlaqə</a> saxlaya bilərsiniz.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </main>
 
         {/* Footer Bölməsi */}
         <footer className="border-t bg-muted/30">
