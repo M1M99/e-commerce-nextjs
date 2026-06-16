@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { getProductBySlug, getAllProductSlugs } from "@/lib/sanity-utils"
+import { getProductBySlug, getAllProductSlugs,getRelatedProducts } from "@/lib/sanity-utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { PortableText, portableTextComponents } from "@/lib/portable-text"
@@ -66,6 +66,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound()
   }
 
+  const relatedProducts = await getRelatedProducts(slug)
   const isInStock = product.availability === "inStock"
   const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "994709001124"
   const whatsappMessage = encodeURIComponent(
@@ -196,7 +197,45 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </main>
 
-        <footer className="border-t bg-muted/30 mt-16">
+        {/* <footer className="border-t bg-muted/30 mt-16"> */}
+        {relatedProducts && relatedProducts.length > 0 && (
+          <section className="container mx-auto px-4 py-16 border-t mt-8">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold">Bənzər Məhsullar</h2>
+              <a href="/" className="text-sm font-medium text-primary hover:underline">Hamısına bax &rarr;</a>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+              {relatedProducts.map((related) => (
+                <a key={related._id} href={`/products/${related.slug.current}`} className="group flex flex-col h-full bg-card rounded-xl border hover:shadow-xl hover:border-primary/20 transition-all duration-300 overflow-hidden p-3 md:p-4">
+                  <div className="aspect-square bg-muted/50 rounded-lg mb-4 overflow-hidden relative">
+                    <img
+                      src={related.mainImageUrl}
+                      alt={related.mainImageAlt || related.title}
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {!related.availability || related.availability === "outOfStock" ? (
+                      <Badge variant="destructive" className="absolute top-2 right-2 shadow-sm text-[10px] md:text-xs">Bitib</Badge>
+                    ) : null}
+                  </div>
+                  <div className="flex-grow flex flex-col justify-between">
+                    <div>
+                      {related.category && <p className="text-xs text-muted-foreground mb-1 font-medium tracking-wide uppercase">{related.category}</p>}
+                      <h3 className="font-semibold text-sm md:text-base line-clamp-2 mb-2 group-hover:text-primary transition-colors">{related.title}</h3>
+                    </div>
+                    <div className="flex items-center justify-between mt-auto pt-2">
+                      <p className="font-bold text-lg">{related.price} ₼</p>
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <footer className="border-t bg-muted/30 mt-8">
           <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
