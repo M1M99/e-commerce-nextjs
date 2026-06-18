@@ -179,7 +179,7 @@ export default async function BlogPostPage({ params }: Props) {
                      </span>
                   </div>
                   
-                  <h3 id="related-product-title" className="text-lg font-bold mb-2 text-gray-900 leading-snug">
+                  <h3 id="related-product-title" className="text-lg font-bold mb-2 text-gray-900 leading-snug dark:text-white">
                     <Link href={`/products/${product.slug}`} className="hover:underline decoration-blue-500 underline-offset-4">
                         {product.title}
                     </Link>
