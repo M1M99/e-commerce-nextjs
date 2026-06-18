@@ -168,7 +168,8 @@ export default async function BlogPostPage({ params }: Props) {
           {/* --- SIDEBAR (ASIDE) --- */}
           <aside className="lg:col-span-4 space-y-8">
             
-            <div className="sticky top-24 bg-white border rounded-xl p-6 shadow-sm dark:from-slate-900 transition-all hover:shadow-md">
+            {/* <div className="sticky top-24 bg-white border rounded-xl p-6 shadow-sm dark:from-slate-900 transition-all hover:shadow-md"> */}
+            <div className="sticky top-28 bg-gradient-to-b from-white to-gray-50/50 dark:from-slate-900 dark:to-slate-900/50 border border-gray-100 dark:border-slate-800 rounded-[2rem] p-8 shadow-xl shadow-gray-200/40 dark:shadow-none transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/20 dark:hover:border-primary/30">
               
               {product ? (
                 <section aria-labelledby="related-product-title">
