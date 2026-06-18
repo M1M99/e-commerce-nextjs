@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
                 </time>
               </div>
 
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className="text-3xl dark:text-white md:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 {post.title}
               </h1>
 
