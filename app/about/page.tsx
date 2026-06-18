@@ -59,7 +59,7 @@ export default function AboutPage() {
               <div className="w-20 h-2 bg-gradient-to-r from-primary to-blue-500 rounded-full"></div>
               
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-pretty">
-                <strong>VitaminAz</strong> olaraq uzun illərdir ki, Bakı və ətraf ərazilərdə müştərilərimizə xidmət göstəririk. Biz yalnız məhsul satmırıq, eyni zamanda müştərilərimizə sağlam yaşamaq üçün düzgün məsləhətlər və yol göstərici təqdim edirik.
+                <strong>VitaminAz</strong> olaraq uzun müddətdir ki, Bakı və ətraf ərazilərdə müştərilərimizə xidmət göstəririk. Biz yalnız məhsul satmırıq, eyni zamanda müştərilərimizə sağlam yaşamaq üçün düzgün məsləhətlər və yol göstərici təqdim edirik.
               </p>
               
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-pretty">
