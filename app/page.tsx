@@ -4,6 +4,7 @@ import { CartButton } from "@/components/cart-button"
 import type { Metadata } from "next"
 import { Instagram } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
+import { FilterBar } from "@/components/FilterBar"
 
 export const metadata: Metadata = {
   title: "VitaminAz | Bakıda Onlayn Mağaza və Sürətli Çatdırılma",
@@ -39,8 +40,19 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600 
 
-export default async function HomePage() {
-  const products = await getAllProducts()
+// export default async function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  // 2. PARAMS TİPİNİ GENİŞLƏNDİRDİK
+  searchParams: Promise<{ q?: string; category?: string; sort?: string }>; 
+}) {
+  const params = await searchParams;
+  const query = params?.q || "";
+  const category = params?.category || "";
+  const sort = params?.sort || "";
+  // const products = await getAllProducts()
+  const products = await getAllProducts(query, category, sort)
   
   const jsonLd = {
     "@context": "https://schema.org",
