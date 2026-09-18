@@ -141,6 +141,7 @@ export default async function HomePage({
                 {products.length} {products.length === 1 ? "məhsul" : "məhsul"} mövcuddur
               </p>
             </div>
+            <FilterBar />
           </div>
 
           {products.length === 0 ? (
